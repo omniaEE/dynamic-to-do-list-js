@@ -1,13 +1,16 @@
+// Setup Event Listener for Page Load
 document.addEventListener("DOMContentLoaded", function() {
-  // Select DOM elements
+  // Select DOM Elements
   const addButton = document.getElementById("add-task-btn");
   const taskInput = document.getElementById("task-input");
   const taskList = document.getElementById("task-list");
 
-  // Create the addTask function
+  // Create the addTask Function
   function addTask() {
+    // Retrieve and trim the value from the task input field
     const taskText = taskInput.value.trim();
 
+    // Check if taskText is not empty
     if (taskText === "") {
       alert("Please enter a task");
       return;
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     taskInput.value = "";
   }
 
-  // Attach event listeners
+  // Attach Event Listeners
   addButton.addEventListener("click", addTask);
 
   taskInput.addEventListener("keypress", function(event) {
