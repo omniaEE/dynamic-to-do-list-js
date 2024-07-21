@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Create the addTask Function
   function addTask(taskText, save = true) {
+    // Retrieve and trim the value from the task input field
+    taskText = taskText.trim();
+
+    // Check if taskText is not empty
+    if (taskText === "") {
+      alert("Please enter a task");
+      return;
+    }
+
     // Create a new li element
     const taskListItem = document.createElement("li");
     taskListItem.textContent = taskText;
@@ -33,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Append the li element to the task list
     taskList.appendChild(taskListItem);
+
+    // Clear the task input field
+    taskInput.value = "";
 
     // Save task to Local Storage if save is true
     if (save) {
@@ -62,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const taskText = taskInput.value.trim();
     if (taskText !== "") {
       addTask(taskText);
-      taskInput.value = "";
     }
   });
 
@@ -71,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const taskText = taskInput.value.trim();
       if (taskText !== "") {
         addTask(taskText);
-        taskInput.value = "";
       }
     }
   });
