@@ -68,7 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem('tasks', JSON.stringify(storedTasks));
     }
   }
-
+const removeButton = document.createElement('button');
+        removeButton.textContent = "Remove";
+        removeButton.classList.add('remove-btn'); // 
   // Attach Event Listeners
   addButton.addEventListener("click", function() {
     const taskText = taskInput.value.trim();
